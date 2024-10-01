@@ -18,7 +18,7 @@ const Auth = () => {
             <div className="Webname flex flex-col font-bold">
             <h1 className='font-bold text-3xl  bg-[100%] bg-repeat bg-gradient-to-r from-[#2eaafa]-to-[#1060d7] leading-normal'>FeatherPerfect</h1>
             <h6 className='dark:text-white pt-0 mb-1'>IPF is our Brand Ambassador!</h6>
-                <h6 className='text-xs font-extralight dark:text-white/80'>(You guessed it right! It has Perfect Feathers!)</h6>
+            <h6 className='text-xs font-extralight dark:text-white/80'>(You guessed it right! It has Perfect Feathers!)</h6>
             </div>
         </div>
         
