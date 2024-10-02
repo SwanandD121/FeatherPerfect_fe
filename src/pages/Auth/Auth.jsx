@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react'; //also useState is required, but th
 // for dark mode
 
 const Auth = () => {
-
+    // For Toggle Login And SignUp
+    const [login, setLogin] = useState("Login");
 
 
   return (
@@ -21,18 +22,14 @@ const Auth = () => {
                 <h6 className='text-xs font-extralight dark:text-white/80'>(You guessed it right! It has Perfect Feathers!)</h6>
             </div>
 
-        {/* <SignUp/> */}
-        <LogIn/>
+       {login === "Login" ? <LogIn setLogin={setLogin}/>
+        : <SignUp setLogin={setLogin}/>}
         </div>
     </div>
   )
 }
 
-function handleSignup(){
-    <SignUp/>
-}
-
-function SignUp(){
+function SignUp({setLogin}){
         // for dark mode
   const [theme, setTheme] = useState(null);
 
@@ -95,7 +92,7 @@ function SignUp(){
 
                 <div className='flex text-sm items-center gap-2'>
                     <span className='dark:text-white'>Already have an account?</span>
-                    <span className='font-bold hover:underline hover:cursor-pointer dark:text-white'>Login</span>
+                    <span className='font-bold hover:underline hover:cursor-pointer dark:text-white' onClick={() => setLogin("Login")}>Login</span>
                 </div>
 
                 <button type='submit' className='text-white bg-gradient-to-r from-[#2eaafa] to-[#1060d7] p-2 rounded-lg shadow-md border-2  hover:border-2 dark:border-2 dark:border-black/90 dark:hover:border-[#2eaafa]   hover:border-[#2eaafa] hover:bg-gradient-to-l hover:from-transparent hover:to-transparent hover:text-[#297eff] hover:cursor-pointer'>
@@ -107,7 +104,7 @@ function SignUp(){
     )
 }
 
-function LogIn(){
+function LogIn({setLogin}){
     return (
         <div className="a-right flex flex-col bg-white/70 dark:bg-slate-800 rounded-2xl p-4 w-96 gap-4 shadow-lg">
             <div className="infoForm flex flex-col gap-4 items-center">
@@ -126,7 +123,7 @@ function LogIn(){
 
                     <div className='flex text-sm items-center gap-2'>
                         <span className="dark:text-white">New to Wildlife?</span>
-                        <span className='font-bold hover:underline hover:cursor-pointer dark:text-white' onClick={handleSignup}>SignUp</span>
+                        <span className='font-bold hover:underline hover:cursor-pointer dark:text-white' onClick={() => setLogin("SignUp")}>SignUp</span>
                     </div>
 
                     <Link to="/home">
