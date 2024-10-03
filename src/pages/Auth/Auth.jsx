@@ -33,6 +33,21 @@ function SignUp({setLogin}){
         // for dark mode
   const [theme, setTheme] = useState(null);
 
+<<<<<<< Updated upstream
+=======
+  const signupHandler =()=>{
+    //   dummy signup handler 
+    // complete signin handler here 
+   
+    if(isSignIn){
+        toast.success("Sign In Successfully")
+        // toasts can be added further according to use cases
+    }else{
+        toast.error("Sign In Failed")
+    }
+     
+ }
+>>>>>>> Stashed changes
   useEffect(() => {
     if(window.matchMedia('(prefers-color-scheme: dark)').matches){
       setTheme('dark');
@@ -105,6 +120,26 @@ function SignUp({setLogin}){
 }
 
 function LogIn({setLogin}){
+<<<<<<< Updated upstream
+=======
+
+    const [isLoggedIn , setIsLoggedIn]= useState(true);
+   
+
+ const loginHandler =()=>{
+    //  dummy login handler 
+    // complete the login  handler here 
+   
+   
+    if(isLoggedIn){
+        toast.success("Logged In Successfully")
+    }else{
+        toast.error("Login Failed")
+    }
+     
+ }
+
+>>>>>>> Stashed changes
     return (
         <div className="a-right flex flex-col bg-white/70 dark:bg-slate-800 rounded-2xl p-4 w-96 gap-4 shadow-lg">
             <div className="infoForm flex flex-col gap-4 items-center">
