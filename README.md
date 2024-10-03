@@ -47,10 +47,7 @@ Whether you're a professional wildlife photographer or a casual nature lover, **
 2. **🟩 Node.js**
    - Powers the back-end server, ensuring efficient and scalable handling of user data and content.
 
-3. **⚛️ Firebase**
-   - Provides real-time data management and user authentication services, offering a seamless user experience.
-
-4. **🎨 CSS (Cascading Style Sheets)**
+3. **🎨 Tailwind CSS**
    - Ensures a clean, responsive, and aesthetically pleasing design.
 
 ---
