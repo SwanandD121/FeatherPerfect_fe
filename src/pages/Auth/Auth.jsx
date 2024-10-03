@@ -2,6 +2,8 @@ import React from 'react'
 import Logo from '../../img/logo.png'
 import './Auth.css'
 import { Link } from 'react-router-dom';
+import eye from "../../img/show-eye.png";
+import hideEye from "../../img/hide-eye.png"
 
 // for dark mode
 import { useEffect, useState } from 'react'; //also useState is required, but thats already imported above
@@ -32,6 +34,8 @@ const Auth = () => {
 function SignUp({setLogin}){
         // for dark mode
   const [theme, setTheme] = useState(null);
+  const [passHidden, setPassHidden] = useState(true);
+  const [confPassHidden, setConfPassHidden] = useState(true);
 
   useEffect(() => {
     if(window.matchMedia('(prefers-color-scheme: dark)').matches){
@@ -82,8 +86,18 @@ function SignUp({setLogin}){
                 </div>
 
                 <div className='flex gap-2'>
-                    <input type="text" placeholder='Password' name='Password' className='password bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg outline-none'/>
-                    <input type="text" placeholder='Confirm Password' name='Confirm Password' className='confirmPassword bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg outline-none'/>
+                    <div className='relative'>
+                        <input type={passHidden ? "password" : "text"} placeholder='Password' name='Password' className='password bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg outline-none'/>
+                        <button className='text-white absolute right-1 h-full'>
+                            <img src={passHidden ? hideEye : eye } onClick={() => setPassHidden(!passHidden)} className='w-full h-full p-2 text-white' alt="" />
+                        </button>
+                    </div>
+                    <div className="relative">
+                        <input type={confPassHidden ? "password" : "text"} placeholder='Confirm Password' name='Confirm Password' className='confirmPassword bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg outline-none'/>
+                        <button className='text-white absolute right-1 h-full'>
+                            <img src={confPassHidden ? hideEye : eye } onClick={() => setConfPassHidden(!confPassHidden)} className='w-full h-full p-2 text-white' alt="" />
+                        </button>
+                    </div>
                 </div>
 
             </div>
@@ -105,6 +119,7 @@ function SignUp({setLogin}){
 }
 
 function LogIn({setLogin}){
+    const [hidden, setHidden] = useState(true);
     return (
         <div className="a-right flex flex-col bg-white/70 dark:bg-slate-800 rounded-2xl p-4 w-96 gap-4 shadow-lg">
             <div className="infoForm flex flex-col gap-4 items-center">
@@ -115,8 +130,11 @@ function LogIn({setLogin}){
                     <input type="text" placeholder='UserName' name='username' className='userName w-full bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg outline-none' />
                 </div>
 
-                <div className='w-full '>
-                    <input type="text" placeholder='Password' name='password' className='Password w-full bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg outline-none' />
+                <div className='w-full relative'>
+                    <input type={hidden ? "password" : "text"} placeholder='Password' name='password' className='Password w-full bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg outline-none' />
+                    <button className='text-white absolute right-1 h-full'>
+                        <img src={hidden ? hideEye : eye } onClick={() => setHidden(!hidden)} className='w-full h-full p-2 text-white' alt="" />
+                    </button>
                 </div>
 
                 <div className='flex flex-col items-center gap-4'>
