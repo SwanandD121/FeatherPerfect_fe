@@ -3,6 +3,8 @@ import Auth from "./pages/Auth/Auth";
 import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -20,7 +22,19 @@ function App() {
           className="blur-3xl absolute bg-blue-200 dark:bg-blue-800/30 w-64 h-56 rounded-full"
           style={{ top: "85%", right: "21rem" }}
         ></div>
-
+        
+         <ToastContainer 
+        position="top-right" 
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
         {/* <Home/>
 
         <Profile/>

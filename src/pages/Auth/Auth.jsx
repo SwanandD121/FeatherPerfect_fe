@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../img/logo.png'
 import './Auth.css'
 import { Link } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 // for dark mode
 import { useEffect, useState } from 'react'; //also useState is required, but thats already imported above
 // for dark mode
@@ -32,9 +32,8 @@ const Auth = () => {
 function SignUp({setLogin}){
         // for dark mode
   const [theme, setTheme] = useState(null);
+  const [isSignIn, setIsSignedIn] = useState(null);
 
-<<<<<<< Updated upstream
-=======
   const signupHandler =()=>{
     //   dummy signup handler 
     // complete signin handler here 
@@ -47,7 +46,7 @@ function SignUp({setLogin}){
     }
      
  }
->>>>>>> Stashed changes
+
   useEffect(() => {
     if(window.matchMedia('(prefers-color-scheme: dark)').matches){
       setTheme('dark');
@@ -120,8 +119,7 @@ function SignUp({setLogin}){
 }
 
 function LogIn({setLogin}){
-<<<<<<< Updated upstream
-=======
+
 
     const [isLoggedIn , setIsLoggedIn]= useState(true);
    
@@ -139,8 +137,7 @@ function LogIn({setLogin}){
      
  }
 
->>>>>>> Stashed changes
-    return (
+   return (
         <div className="a-right flex flex-col bg-white/70 dark:bg-slate-800 rounded-2xl p-4 w-96 gap-4 shadow-lg">
             <div className="infoForm flex flex-col gap-4 items-center">
 
