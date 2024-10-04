@@ -6,12 +6,21 @@ import TrendCard from '../TrendCard/TrendCard';
 import ShareModal from '../ShareModal/ShareModal';
 import { Link } from 'react-router-dom';
 import './RightSide.css';
-import NotificationModal from '../NotificationModal/NotificationModal'; 
+import NotificationModal from '../NotificationModal/NotificationModal';
 
+const notifications = [
+  { title: 'New Follower', message: 'Jane Doe started following you.', time: '1 hour ago' },
+  { title: 'New Comment', message: 'John commented on your "Leopard in the Wild" photo.', time: '3 hours ago' },
+  { title: 'Photo Feature', message: 'Your "Eagle in Flight" photo has been featured in the Trending section.', time: '5 hours ago' },
+  { title: 'Contest Winner', message: 'You’ve won the "Wildlife of Africa" photography contest!', time: '1 day ago' },
+  { title: 'Photo Upload Success', message: 'Your "Elephants at Sunset" photo has been successfully uploaded.', time: '2 days ago' },
+  { title: 'New Message', message: 'David sent you a message: "Would love to collaborate on a project."', time: '3 days ago' },
+];
 const RightSide = () => {
   const [theme, setTheme] = useState(null);
   const [modalOpened, setModalOpened] = useState(false);
   const [notiModalOpened, setNotiModalOpened] = useState(false); 
+  const [count,setCount] =useState(notifications.length);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -39,8 +48,15 @@ const RightSide = () => {
         <Link to="/home">
           <img src={Home} alt="home" className='w-[2.5rem] h-[2.5rem]' />
         </Link>
+       
+       <div className='relative ' onClick={() => setNotiModalOpened(true)}>
+        <img src={Noti} alt="notifications" className='w-8 h-8 ' onClick={() => setNotiModalOpened(true)} />
 
-        <img src={Noti} alt="notifications" className='w-8 h-8' onClick={() => setNotiModalOpened(true)} /> 
+       <div className='absolute top-[-8px] right-[-10px] bg-red-500  p-[3px] px-[8px] rounded-full'>
+        {count}
+       </div>
+        </div>
+      
         <img src={Setting} alt="settings" className='w-[2.2rem] h-[2.2rem]' />
 
         <label className="switch">
@@ -59,7 +75,7 @@ const RightSide = () => {
       </button>
 
       <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} />
-      <NotificationModal modalOpened={notiModalOpened} setModalOpened={setNotiModalOpened} /> 
+      <NotificationModal modalOpened={notiModalOpened} setModalOpened={setNotiModalOpened}  notifications={notifications}/> 
     </div>
   );
 };

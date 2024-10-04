@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 
-
-const NotificationModal = ({ modalOpened, setModalOpened }) => {
+const NotificationModal = ({ modalOpened, setModalOpened, notifications }) => {
   const modalRef = useRef();
 
   const handleClickOutside = (event) => {
@@ -18,7 +17,7 @@ const NotificationModal = ({ modalOpened, setModalOpened }) => {
       onClick={handleClickOutside}
     >
       <div 
-        className="bg-gray-800 p-5 rounded-lg w-[600px] h-[400px] shadow-lg" 
+        className="bg-gray-800 p-5 rounded-lg w-[600px] h-[400px] shadow-lg overflow-y-auto" 
         ref={modalRef}
       >
         <div className="flex justify-between items-center">
@@ -31,7 +30,17 @@ const NotificationModal = ({ modalOpened, setModalOpened }) => {
           </button>
         </div>
         <div className="mt-5">
-          <p className="text-center text-gray-400 text-2xl">No notifications</p>
+          {notifications.length > 0 ? (
+            notifications.map((notification, index) => (
+              <div key={index} className="p-3 border-b border-gray-700">
+                <h4 className="text-white font-bold">{notification.title}</h4>
+                <p className="text-gray-400">{notification.message}</p>
+                <p className="text-gray-500 text-sm">{notification.time}</p>
+              </div>
+            ))
+          ) : (
+            <p className="text-center text-gray-400 text-2xl">No notifications</p>
+          )}
         </div>
       </div>
     </div>
