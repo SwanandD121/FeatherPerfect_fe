@@ -40,7 +40,7 @@ To start contributing to this project, follow the steps below.
 
 - Star & Fork this repository. This will create a local copy of this repository on your github profile.
 
-<img src=".github/assets/fork.png" src="fork" width="500" />
+<img src="docs/fork.png" src="fork" width="500" />
 
 - Follow [git workflow](docs/git.md) to know more.
 
