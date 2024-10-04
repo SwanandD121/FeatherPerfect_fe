@@ -223,7 +223,7 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                             onClick={navigatePage}
                             className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400"
                         >
-                            Sign In
+                            Log In
                         </button>
                     </p>
                 </div>
@@ -321,7 +321,7 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
                         type="submit"
                         className="w-full px-4 py-2 font-bold text-white bg-blue-600 rounded-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-offset-gray-800 duration-300 transition-all outline-none"
                     >
-                        Sign In
+                        Log In
                     </button>
                 </form>
 
