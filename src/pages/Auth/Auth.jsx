@@ -32,7 +32,7 @@ const Auth = () => {
 function SignUp({setLogin}){
         // for dark mode
   const [theme, setTheme] = useState(null);
-  const [isSignIn, setIsSignedIn] = useState(null);
+  const [isSignIn, setIsSignedIn] = useState(false);
 
   const signupHandler =()=>{
     //   dummy signup handler 
