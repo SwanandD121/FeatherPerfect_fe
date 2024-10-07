@@ -155,12 +155,12 @@ Follow these steps to create a pull request:
    - Copy the repository URL from your forked repository (click the **Code** button and copy the URL).
    - Open a terminal and run the following command:
      ```bash
-     git clone <repository-url>
+     git clone https://github.com/<username>/FeatherPerfect_fe.git
      ```
-   - Replace `<repository-url>` with the URL you copied.
+   - Replace `<username>` with the your username.
    - Navigate to the cloned repository:
      ```bash
-     cd <repository-name>
+     cd <FeatherPerfect_fe>
      ```
 
 ### 3. Create a New Branch
