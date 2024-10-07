@@ -107,8 +107,56 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
     // a litter bit optimize, it create once reference of a method
     const navigatePage = () => setLogin("Login");
 
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+
+    const validatePassword = (pass) => {
+        const minLength = 8;
+        const maxLength = 20;
+        const hasUpperCase = /[A-Z]/.test(pass);
+        const hasLowerCase = /[a-z]/.test(pass);
+        const hasNumbers = /\d/.test(pass);
+        const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(pass);
+
+        if (pass.length < minLength || pass.length > maxLength) {
+            return `Password must be between ${minLength} and ${maxLength} characters.`;
+        }
+
+        if (!(hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChar)) {
+            return "Password must include uppercase, lowercase, numbers, and special characters.";
+        }
+
+        // Basic strength check (you can expand this)
+        const commonPatterns = /^(?=.*123)(?=.*password)(?=.*qwerty)/i;
+        if (commonPatterns.test(pass)) {
+            return "Password contains common patterns. Please choose a stronger password.";
+        }
+
+        return '';
+    };
+
+    const handlePasswordChange = (e) => {
+        const newPassword = e.target.value;
+        setPassword(newPassword);
+        setPasswordError(validatePassword(newPassword));
+    };
+
+    const handleConfirmPasswordChange = (e) => {
+        setConfirmPassword(e.target.value);
+    };
+
     const handleFormSubmission = (e) => {
         e.preventDefault();
+        if (password !== confirmPassword) {
+            setPasswordError("Passwords do not match.");
+            return;
+        }
+        if (passwordError) {
+            return;
+        }
+        // Proceed with form submission
+        console.log("Form submitted successfully");
     };
 
     return (
@@ -184,6 +232,8 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                                 name="password"
                                 type="password"
                                 required
+                                value={password}
+                                onChange={handlePasswordChange}
                                 className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
                                 placeholder="Password"
                             />
@@ -200,11 +250,17 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                                 name="confirm-password"
                                 type="password"
                                 required
+                                value={confirmPassword}
+                                onChange={handleConfirmPasswordChange}
                                 className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
                                 placeholder="Confirm Password"
                             />
                         </div>
                     </div>
+
+                    {passwordError && (
+                        <p className="text-red-500 text-sm mt-1">{passwordError}</p>
+                    )}
 
                     {/* SignUp Button */}
                     <button
