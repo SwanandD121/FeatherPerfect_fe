@@ -1,112 +1,217 @@
-# Contribution to FeatherPerfect_fe
 
-First of all, thank you for taking the time to contribute 😊.
+# Contributing to CONTRIBUTING.md
 
-We welcome contributions from anyone willing to improve this project or add new features.
+First off, thanks for taking the time to contribute! ❤️
 
-Contribution guidelines are listed below. Please take the time to go through the guidelines and follow them so that it is easy for maintainers to merge or address your contributions.
+All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
+
+> And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
+> - Star the project
+> - Refer this project in your project's readme
+> - Mention the project at local meetups and tell your friends/colleagues
+
 
 ## Table of Contents
 
-- [Contributing to FeatherPerfect_fe 🪡](#contributing-to-FeatherPerfect_fe)
-  - [Table of Contents](#table-of-contents)
-  - [First time Contributor](#first-time-contributor)
-  - [I Want To Contribute](#i-want-to-contribute)
-    - [Fork the Project](#fork-the-project)
-    - [Create a new branch](#create-a-new-branch)
-    - [Work on the issue assigned](#work-on-the-issue-assigned)
-    - [Commit](#commit)
-    - [Push Local Changes](#push-local-changes)
-    - [Pull Request](#pull-request)
-    - [Review](#review)
-  - [Other Ways to Contribute](#other-ways-to-contribute)
+- [Code of Conduct](#code-of-conduct)
+- [I Have a Question](#i-have-a-question)
+- [I Want To Contribute](#i-want-to-contribute)
+- [Reporting Bugs](#reporting-bugs)
+- [Suggesting Enhancements](#suggesting-enhancements)
+- [Your First Code Contribution](#your-first-code-contribution)
+- [How to create an issue](#how-to-create-an-issue)
+- [How to create a PR](#how-to-create-a-pr)
 
-## First time Contributor
 
-To get an idea of the app, feel free to check out the [website](https://feather-perfect-fe.vercel.app/).
 
-You can start with available list of [issues](https://github.com/SwanandD121/FeatherPerfect_fe/issues)
+## Code of Conduct
+
+This project and everyone participating in it is governed by the
+[CONTRIBUTING.md Code of Conduct](blob/master/CODE_OF_CONDUCT.md).
+By participating, you are expected to uphold this code. Please report unacceptable behavior
+to <>.
+
+
+## I Have a Question
+
+> If you want to ask a question, we assume that you have read the available [Documentation]().
+
+Before you ask a question, it is best to search for existing [Issues](/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
+
+If you then still feel the need to ask a question and need clarification, we recommend the following:
+
+- Open an [Issue](/issues/new).
+- Provide as much context as you can about what you're running into.
+- Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
+
+We will then take care of the issue as soon as possible.
+
+
 
 ## I Want To Contribute
 
-- Always check for [existing issues](https://github.com/SwanandD121/FeatherPerfect_fe/issues) before creating a new issue.
-- Only start working on an issue if it has been **assigned to you**. This avoids multiple PRs for the same issue.
-- Every change in this project must have an associated issue. **Issue before PR**
+> ### Legal Notice 
+> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
+
+### Reporting Bugs
 
 
-To start contributing to this project, follow the steps below.
+#### Before Submitting a Bug Report
 
-### Fork the Project
+A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
 
-- Star & Fork this repository. This will create a local copy of this repository on your github profile.
+- Make sure that you are using the latest version.
+- Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation](). If you are looking for support, you might want to check [this section](#i-have-a-question)).
+- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](issues?q=label%3Abug).
+- Also make sure to search the internet (including Stack Overflow) to see if users outside of the GitHub community have discussed the issue.
+- Collect information about the bug:
+- Stack trace (Traceback)
+- OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
+- Version of the interpreter, compiler, SDK, runtime environment, package manager, depending on what seems relevant.
+- Possibly your input and the output
+- Can you reliably reproduce the issue? And can you also reproduce it with older versions?
 
-<img src="docs/fork.png" src="fork" width="500" />
 
-- Follow [git workflow](docs/git.md) to know more.
+#### How Do I Submit a Good Bug Report?
 
-### Create a new branch
+> You must never report security related issues, vulnerabilities or bugs including sensitive information to the issue tracker, or elsewhere in public. Instead sensitive bugs must be sent by email to <>.
 
-Creating a new branch lets you work on your issue without creating merge conflicts while making PRs.
-Select a name for your branch that is in line with the issue you are addressing.
 
-```bash
-# It will create a new branch with name branch_name and switch to that branch
-git checkout -b branch_name
-```
+We use GitHub issues to track bugs and errors. If you run into an issue with the project:
 
-### Work on the issue assigned
+- Open an [Issue](/issues/new). (Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.)
+- Explain the behavior you would expect and the actual behavior.
+- Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
+- Provide the information you collected in the previous section.
 
-- Work on the issue assigned to you.
-- Add all the files/folders needed.
-- After you've made your contribution to the project add changes to the branch you've just created:
+Once it's filed:
 
-```bash
-# To add all new files to branch branch_name
-git add .
+- The project team will label the issue accordingly.
+- A team member will try to reproduce the issue with your provided steps. If there are no reproduction steps or no obvious way to reproduce the issue, the team will ask you for those steps and mark the issue as `needs-repro`. Bugs with the `needs-repro` tag will not be addressed until they are reproduced.
+- If the team is able to reproduce the issue, it will be marked `needs-fix`, as well as possibly other tags (such as `critical`), and the issue will be left to be [implemented by someone](#your-first-code-contribution).
 
-# To add only a few files to branch_name
-git add <names of files changed or added>
-```
 
-### Commit
 
-- To commit this changes, give a descriptive message for the convenience of reviewer.
 
-```bash
-# This message will be associated with all files you have changed
-git commit -m "message"
-```
+### Suggesting Enhancements
 
-### Push Local Changes
+This section guides you through submitting an enhancement suggestion for CONTRIBUTING.md, **including completely new features and minor improvements to existing functionality**. Following these guidelines will help maintainers and the community to understand your suggestion and find related suggestions.
 
-```bash
-# To push your work/changes to your remote repository
-git push -u origin branch_name
-```
 
-### Pull Request
+#### Before Submitting an Enhancement
 
-Go to your repository in the browser and click on compare and pull requests.
-This will send a request to the maintainer to add your contribution to the main repository.
+- Make sure that you are using the latest version.
+- Read the [documentation]() carefully and find out if the functionality is already covered, maybe by an individual configuration.
+- Perform a [search](/issues) to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
+- Find out whether your idea fits with the scope and aims of the project. It's up to you to make a strong case to convince the project's developers of the merits of this feature. Keep in mind that we want features that will be useful to the majority of our users and not just a small subset. If you're just targeting a minority of users, consider writing an add-on/plugin library.
 
-### Add a title to your Pull Request.
 
-Add a meaningful title to the pull request so that reviewing will be easy for our team.
+#### How Do I Submit a Good Enhancement Suggestion?
 
-```text
-fix: minor issues to increase performance by 20%
-```
+Enhancement suggestions are tracked as [GitHub issues](/issues).
 
-Make sure to mention which issue is solved with this Pull Request by mentioning the issue number #. Then add a description to your Pull Request that explains your contribution.
+- Use a **clear and descriptive title** for the issue to identify the suggestion.
+- Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
+- **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
+- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux. 
+- **Explain why this enhancement would be useful** to most CONTRIBUTING.md users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
-### Review
 
-Congratulations! 🎉🌟 Sit and relax, you've made your contribution to the FeatherPerfect_fe project. Wait until the PR is reviewed and incorporate changes suggested by the reviewers. After which the PR can be successfully merged.
+## How to create an issue
 
-## Other Ways to Contribute
+### Issue Title:
+[bug/enhancement/feature/documentation][A brief title for the issue]
 
-If you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about.
+### Description:
+[A clear and concise description of what the issue is about.]
 
-- Star the project 
-- Tweet about it 
-- Mention this project to your peers
+### Steps to Reproduce:
+1. [First step]
+2. [Second step]
+3. [And so on...]
+
+### Expected Behavior:
+[Describe what you expected to happen.]
+
+### Screenshots/Logs:
+[If applicable, add screenshots or logs to help explain your issue.]
+
+### Environment:
+- *Operating System*: [e.g. Windows, macOS, Ubuntu]
+- *Node.js version*: [if relevant]
+- *Browser/version*: [if relevant]
+
+### Additional Context:
+[Any other information you think would be helpful.]
+
+## How to create a PR:
+Follow these steps to create a pull request:
+
+### 1. Fork the Repository
+   - Go to the repository you want to contribute to.
+   - Click the **Fork** button in the top right corner to create a copy of the repository under your GitHub account.
+
+### 2. Clone the Forked Repository
+   - Copy the repository URL from your forked repository (click the **Code** button and copy the URL).
+   - Open a terminal and run the following command:
+     ```bash
+     git clone <repository-url>
+     ```
+   - Replace `<repository-url>` with the URL you copied.
+   - Navigate to the cloned repository:
+     ```bash
+     cd <repository-name>
+     ```
+
+### 3. Create a New Branch
+   - Create a new branch for your changes:
+     ```bash
+     git checkout -b <branch-name>
+     ```
+   - Replace `<branch-name>` with a descriptive name for your branch.
+
+### 4. Make Your Changes
+   - Open the files you want to edit in a code editor.
+   - Make your changes and save them.
+
+### 5. Commit Your Changes
+   - Stage the changes:
+     ```bash
+     git add .
+     ```
+   - Commit the changes with a meaningful message:
+     ```bash
+     git commit -m "Add a brief description of the changes"
+     ```
+
+### 6. Push the Changes to GitHub
+   - Push your branch to your forked repository:
+     ```bash
+     git push origin <branch-name>
+     ```
+
+### 7. Create a Pull Request
+   - Go to your forked repository on GitHub.
+   - Click the **Compare & pull request** button next to the branch you just pushed.
+   - Fill out the PR template, including a description of your changes.
+   - Click **Create pull request**.
+
+### 8. Review and Address Feedback
+   - Monitor your pull request for any comments or requests for changes.
+   - If requested, make the necessary changes and push them to your branch.
+   - Your PR will update automatically.
+
+### 9. Wait for Approval and Merge
+   - Once your pull request is approved, it will be merged into the main repository.
+
+### 10. Clean Up
+   - After your pull request has been merged, you can delete your branch from both your local and remote repositories.
+     ```bash
+     git branch -d <branch-name>
+     git push origin --delete <branch-name>
+     ```
+
+Congratulations! You’ve successfully created a pull request.
+
+## To read more about contributing:
+[Here you will learn how to contribute to open source](https://opensource.guide/how-to-contribute/)
