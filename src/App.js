@@ -44,7 +44,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/" element={<Auth />} />
+          <Route path="/Auth" element={<Auth />} />
         </Routes>
       </div>
     </BrowserRouter>
