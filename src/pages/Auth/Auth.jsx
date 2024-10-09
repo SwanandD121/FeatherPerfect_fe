@@ -136,6 +136,18 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
         return '';
     };
 
+    // Show password logic
+    const [passHidden, setPassHidden] = useState(true);
+    const [confPassHidden, setConfPassHidden] = useState(true);
+
+    const showPassword = () => {
+        setPassHidden(!passHidden);
+    };
+
+    const showConfirmPassword = () => {
+        setConfPassHidden(!confPassHidden);
+    };
+
     const handlePasswordChange = (e) => {
         const newPassword = e.target.value;
         setPassword(newPassword);
@@ -227,16 +239,28 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                             >
                                 Password
                             </label>
-                            <input
-                                id="password"
-                                name="password"
-                                type="password"
-                                required
-                                value={password}
-                                onChange={handlePasswordChange}
-                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                                placeholder="Password"
-                            />
+                            <div className="relative flex items-center">
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type={passHidden ? "password" : "text"}
+                                    required
+                                    value={password}
+                                    onChange={handlePasswordChange}
+                                    className="w-full px-3 py-2 mt-1 pr-10 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none transition-all duration-300 hover:border-theme-btn"
+                                    placeholder="Password"
+                                />
+                                <button 
+                                    type="button" 
+                                    onClick={showPassword}
+                                    className="absolute right-3 bg-white dark:bg-gray-700 text-gray-500 hover:text-gray-700 dark:text-gray-200 dark:hover:text-white px-2 py-1 rounded"
+                                >
+                                    {
+                                        passHidden ? <i class="fa-regular fa-eye"></i> : <i class="fa-regular fa-eye-slash"></i>
+                                    }
+                                </button>
+                            </div>
+
                         </div>
                         <div>
                             <label
@@ -245,16 +269,27 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                             >
                                 Confirm Password
                             </label>
-                            <input
-                                id="confirm-password"
-                                name="confirm-password"
-                                type="password"
-                                required
-                                value={confirmPassword}
-                                onChange={handleConfirmPasswordChange}
-                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                                placeholder="Confirm Password"
-                            />
+                            <div className="relative flex items-center">
+                                <input
+                                    id="confirm-password"
+                                    name="confirm-password"
+                                    type={confPassHidden ? "password" : "text"}
+                                    required
+                                    value={confirmPassword}
+                                    onChange={handleConfirmPasswordChange}
+                                    className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
+                                    placeholder="Confirm Password"
+                                />
+                                <button 
+                                    type="button" 
+                                    onClick={showConfirmPassword}
+                                    className="absolute right-3 bg-white dark:bg-gray-700 text-gray-500 hover:text-gray-700 dark:text-gray-200 dark:hover:text-white px-2 py-1 rounded"
+                                >
+                                    {
+                                        confPassHidden ? <i class="fa-regular fa-eye"></i> : <i class="fa-regular fa-eye-slash"></i>
+                                    }
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -321,6 +356,14 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
         navigate("/home");
     };
 
+    // Show password logic
+    const [passHidden, setPassHidden] = useState(true);
+    const [confPassHidden, setConfPassHidden] = useState(true);
+
+    const showPassword = () => {
+        setPassHidden(!passHidden);
+    };
+
     return (
         <div className="a-right flex flex-col bg-white/70 dark:bg-slate-800 rounded-2xl p-4 w-96 gap-4 shadow-lg">
             <div className="w-full max-w-md p-8 space-y-6 rounded-lg dark:bg-gray-800">
@@ -347,14 +390,25 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
                         >
                             Password
                         </label>
-                        <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            required
-                            className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn "
-                            placeholder="Enter your password..."
-                        />
+                        <div className="relative flex items-center">
+                            <input
+                                id="password"
+                                name="password"
+                                type={passHidden ? "password" : "text"}
+                                required
+                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn "
+                                placeholder="Enter your password..."
+                            />
+                            <button 
+                                type="button" 
+                                onClick={showPassword}
+                                className="absolute right-3 bg-white dark:bg-gray-700 text-gray-500 hover:text-gray-700 dark:text-gray-200 dark:hover:text-white px-2 py-1 rounded"
+                                >
+                                {
+                                    passHidden ? <i class="fa-regular fa-eye"></i> : <i class="fa-regular fa-eye-slash"></i>
+                                }
+                            </button>
+                        </div>
                     </div>
 
                     <div className="flex items-center justify-between">
