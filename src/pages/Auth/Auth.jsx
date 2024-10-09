@@ -320,12 +320,12 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                 </div>
 
                 {/* Dark Mode Toggle */}
-                <button
-                    onClick={handleThemeSwitch}
-                    className="w-full text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
-                    {currentTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                </button>
+                <div className="flex flex-row justify-center items-center"> 
+                    <label className="switch"> 
+                        <input type="checkbox" onChange={handleThemeSwitch} /> 
+                            <span className="slider"></span> 
+                    </label>
+                </div>
             </div>
         </div>
     );
@@ -449,12 +449,12 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
                 </div>
 
                 {/* Dark Mode Toggle */}
-                <button
-                    onClick={handleThemeSwitch}
-                    className="w-full text-sm font-medium text-gray-700 dark:text-gray-300 inline-block"
-                >
-                    {currentTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                </button>
+                <div className="flex flex-row justify-center items-center"> 
+                    <label className="switch"> 
+                        <input type="checkbox" onChange={handleThemeSwitch} /> 
+                            <span className="slider"></span> 
+                    </label>
+                </div>
             </div>
         </div>
     );
