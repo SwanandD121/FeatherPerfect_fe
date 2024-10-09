@@ -1,20 +1,12 @@
-import React from "react";
-import Logo from "../../img/logo.png";
-import "./Auth.css";
-// import { Link } from "react-router-dom";
-// import { toast } from "react-toastify";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import eye from "../../img/show-eye.png";
-// import hideEye from "../../img/hide-eye.png";
-
-// for dark mode
-import { useEffect, useState } from "react"; //also useState is required, but thats already imported above
-// for dark mode
+import Logo from "../../img/logo.png";
+import showEye from "../../img/show-eye.png";  // Import the show-eye icon
+import hideEye from "../../img/hide-eye.png";  // Import the hide-eye icon
+import "./Auth.css";
 
 const Auth = () => {
-    // For Toggle Login And SignUp
     const [login, setLogin] = useState("Login");
-    // for dark mode
     const [theme, setTheme] = useState(null);
 
     useEffect(() => {
@@ -64,52 +56,11 @@ const Auth = () => {
 };
 
 function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
-    // for dark mode
-    // const [theme, setTheme] = useState(null);
-    // const [isSignIn, setIsSignedIn] = useState(false);
-
-    // const signupHandler = () => {
-    //     //   dummy signup handler
-    //     // complete signin handler here
-
-    //     if (isSignIn) {
-    //         toast.success("Sign In Successfully");
-    //         // toasts can be added further according to use cases
-    //     } else {
-    //         toast.error("Sign In Failed");
-    //     }
-    // };
-
-    // const [passHidden, setPassHidden] = useState(true);
-    // const [confPassHidden, setConfPassHidden] = useState(true);
-
-    // useEffect(() => {
-    //     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    //         setTheme("dark");
-    //     } else {
-    //         setTheme("light");
-    //     }
-    // }, []);
-
-    // useEffect(() => {
-    //     if (theme === "dark") {
-    //         document.documentElement.classList.add("dark");
-    //     } else {
-    //         document.documentElement.classList.remove("dark");
-    //     }
-    // }, [theme]);
-
-    // const handleThemeSwitch = () => {
-    //     setTheme(theme === "dark" ? "light" : "dark");
-    // };
-
-    // this method is to navigate from login to signup
-    // a litter bit optimize, it create once reference of a method
-    const navigatePage = () => setLogin("Login");
-
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [passHidden, setPassHidden] = useState(true);  // State to toggle password visibility
+    const [confPassHidden, setConfPassHidden] = useState(true);  // State to toggle confirm password visibility
 
     const validatePassword = (pass) => {
         const minLength = 8;
@@ -125,12 +76,6 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
 
         if (!(hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChar)) {
             return "Password must include uppercase, lowercase, numbers, and special characters.";
-        }
-
-        // Basic strength check (you can expand this)
-        const commonPatterns = /^(?=.*123)(?=.*password)(?=.*qwerty)/i;
-        if (commonPatterns.test(pass)) {
-            return "Password contains common patterns. Please choose a stronger password.";
         }
 
         return '';
@@ -164,131 +109,82 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
             <div className="w-full max-w-lg p-8 space-y-6 rounded-sm dark:bg-gray-800">
                 <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white">Create an Account</h2>
                 <form className="space-y-6" onSubmit={handleFormSubmission}>
-                    {/* First Name and Last Name Row */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label
-                                htmlFor="first-name"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                            >
-                                First Name
-                            </label>
-                            <input
-                                id="first-name"
-                                name="first-name"
-                                type="text"
-                                required
-                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                                placeholder="First Name"
-                            />
+                            <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">First Name</label>
+                            <input id="first-name" name="first-name" type="text" required className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn" placeholder="First Name" />
                         </div>
                         <div>
-                            <label
-                                htmlFor="last-name"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                            >
-                                Last Name
-                            </label>
-                            <input
-                                id="last-name"
-                                name="last-name"
-                                type="text"
-                                required
-                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                                placeholder="Last Name"
-                            />
+                            <label htmlFor="last-name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Last Name</label>
+                            <input id="last-name" name="last-name" type="text" required className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn" placeholder="Last Name" />
                         </div>
                     </div>
 
-                    {/* Username Field */}
                     <div>
-                        <label
-                            htmlFor="username"
-                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >
-                            Username
-                        </label>
-                        <input
-                            id="username"
-                            name="username"
-                            type="text"
-                            required
-                            className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                            placeholder="Username"
-                        />
+                        <label htmlFor="username" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Username</label>
+                        <input id="username" name="username" type="text" required className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn" placeholder="Username" />
                     </div>
 
-                    {/* Password and Confirm Password Row */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label
-                                htmlFor="password"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                            >
-                                Password
-                            </label>
-                            <input
-                                id="password"
-                                name="password"
-                                type="password"
-                                required
-                                value={password}
-                                onChange={handlePasswordChange}
-                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                                placeholder="Password"
-                            />
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+                            <div className="relative">
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type={passHidden ? "password" : "text"}  // Toggle between 'password' and 'text'
+                                    required
+                                    value={password}
+                                    onChange={handlePasswordChange}
+                                    className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
+                                    placeholder="Password"
+                                />
+                                <img
+                                    src={passHidden ? showEye : hideEye}
+                                    alt="toggle visibility" 
+                                    className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer icon"
+                                    onClick={() => setPassHidden(!passHidden)}  // Toggle visibility state
+                                />
+                            </div>
                         </div>
                         <div>
-                            <label
-                                htmlFor="confirm-password"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                            >
-                                Confirm Password
-                            </label>
-                            <input
-                                id="confirm-password"
-                                name="confirm-password"
-                                type="password"
-                                required
-                                value={confirmPassword}
-                                onChange={handleConfirmPasswordChange}
-                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                                placeholder="Confirm Password"
-                            />
+                            <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Confirm Password</label>
+                            <div className="relative">
+                                <input
+                                    id="confirm-password"
+                                    name="confirm-password"
+                                    type={confPassHidden ? "password" : "text"}  // Toggle between 'password' and 'text'
+                                    required
+                                    value={confirmPassword}
+                                    onChange={handleConfirmPasswordChange}
+                                    className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
+                                    placeholder="Confirm Password"
+                                />
+                                <img
+                                    src={confPassHidden ? showEye : hideEye}
+                                    alt="toggle visibility"
+                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer icon"
+                                    onClick={() => setConfPassHidden(!confPassHidden)}  // Toggle visibility state
+                                />
+                            </div>
                         </div>
                     </div>
 
-                    {passwordError && (
-                        <p className="text-red-500 text-sm mt-1">{passwordError}</p>
-                    )}
+                    {passwordError && <p className="text-red-500 text-sm mt-1">{passwordError}</p>}
 
-                    {/* SignUp Button */}
-                    <button
-                        type="submit"
-                        className="w-full px-4 py-2 font-bold text-white bg-blue-600 rounded-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-offset-gray-800 duration-300 transition-all outline-none"
-                    >
-                        Sign Up
-                    </button>
+                    <button type="submit" className="submit-button">Sign Up</button>
                 </form>
 
-                {/* New to Wildlife? Sign Up Section */}
-                <div className="text-center ">
+                <div className="text-center">
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                        Alreay in Wildlife?{" "}
-                        <button
-                            onClick={navigatePage}
-                            className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400"
-                        >
+                        Already have an account?{" "}
+                        <button onClick={() => setLogin("Login")} className="text-blue-600 hover:text-blue-500 dark:text-blue-400">
                             Log In
                         </button>
                     </p>
                 </div>
 
-                {/* Dark Mode Toggle */}
-                <button
-                    onClick={handleThemeSwitch}
-                    className="w-full text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
+                <button onClick={handleThemeSwitch} className="toggle-theme-button">
                     {currentTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
                 </button>
             </div>
@@ -297,108 +193,59 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
 }
 
 function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
-    // const [isLoggedIn, setIsLoggedIn] = useState(true);
-    // const [hidden, setHidden] = useState(true);
+    const [passHidden, setPassHidden] = useState(true);  // State to toggle password visibility
     const navigate = useNavigate();
-
-    // const loginHandler = () => {
-    //     //  dummy login handler
-    //     // complete the login  handler here
-
-    //     if (isLoggedIn) {
-    //         toast.success("Logged In Successfully");
-    //     } else {
-    //         toast.error("Login Failed");
-    //     }
-    // };
-
-    // this method is to navigate from login to signup
-    const navigatePage = () => setLogin("SignUp");
 
     const handleFormSubmission = (e) => {
         e.preventDefault();
-        // Navigate to the home page
-        navigate("/home");
+        // Perform login functionality here
+        console.log("Logged in successfully");
+        navigate("/dashboard");  // Navigate to a dashboard or home after login
     };
 
     return (
-        <div className="a-right flex flex-col bg-white/70 dark:bg-slate-800 rounded-2xl p-4 w-96 gap-4 shadow-lg">
-            <div className="w-full max-w-md p-8 space-y-6 rounded-lg dark:bg-gray-800">
-                <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white">Login to Your Account</h2>
-                <form className=" space-y-4" onSubmit={handleFormSubmission}>
+        <div className="a-right flex flex-col bg-white/70 dark:bg-slate-800 rounded-2xl p-4 gap-4 shadow-lg">
+            <div className="w-full max-w-lg p-8 space-y-6 rounded-sm dark:bg-gray-800">
+                <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white">Login</h2>
+                <form className="space-y-6" onSubmit={handleFormSubmission}>
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Email
-                        </label>
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                            placeholder="Enter your username..."
-                        />
+                        <label htmlFor="username" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Username</label>
+                        <input id="username" name="username" type="text" required className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn" placeholder="Username" />
                     </div>
 
                     <div>
-                        <label
-                            htmlFor="password"
-                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >
-                            Password
-                        </label>
-                        <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            required
-                            className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn "
-                            placeholder="Enter your password..."
-                        />
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center">
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+                        <div className="relative">
                             <input
-                                id="remember-me"
-                                name="remember-me"
-                                type="checkbox"
-                                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
-                                checked
-                                readOnly
+                                id="password"
+                                name="password"
+                                type={passHidden ? "password" : "text"}  // Toggle between 'password' and 'text'
+                                required
+                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
+                                placeholder="Password"
                             />
-                            <label htmlFor="remember-me" className="ml-2 text-sm text-gray-600 dark:text-gray-300">
-                                Remember me
-                            </label>
+                            <img
+                                src={passHidden ? showEye : hideEye}
+                                alt="toggle visibility"
+                                className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer icon"
+                                onClick={() => setPassHidden(!passHidden)}  // Toggle visibility state
+                            />
                         </div>
                     </div>
 
-                    <button
-                        type="submit"
-                        className="w-full px-4 py-2 font-bold text-white bg-blue-600 rounded-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-offset-gray-800 duration-300 transition-all outline-none"
-                    >
-                        Log In
-                    </button>
+                    <button type="submit" className="submit-button">Log In</button>
                 </form>
 
-                {/* New to Wildlife? Sign Up Section */}
-                <div className="text-center ">
+                <div className="text-center">
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                        New to Wildlife?{" "}
-                        <button
-                            onClick={navigatePage}
-                            className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400"
-                        >
+                        Don't have an account?{" "}
+                        <button onClick={() => setLogin("Sign Up")} className="text-blue-600 hover:text-blue-500 dark:text-blue-400">
                             Sign Up
                         </button>
                     </p>
                 </div>
 
-                {/* Dark Mode Toggle */}
-                <button
-                    onClick={handleThemeSwitch}
-                    className="w-full text-sm font-medium text-gray-700 dark:text-gray-300 inline-block"
-                >
+                <button onClick={handleThemeSwitch} className="toggle-theme-button">
                     {currentTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
                 </button>
             </div>
@@ -407,6 +254,3 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
 }
 
 export default Auth;
-
-// bg-gradient-to-r from-[#f9a225] to-[#f95f35]
-// linear-gradient(98.63deg, #f9a225 0%, #f95f35 100%)
