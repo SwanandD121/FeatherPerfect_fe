@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../img/logo.png";
 import "./Auth.css";
 // import { Link } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 // import eye from "../../img/show-eye.png";
 // import hideEye from "../../img/hide-eye.png";
@@ -10,6 +10,11 @@ import { useNavigate } from "react-router-dom";
 // for dark mode
 import { useEffect, useState } from "react"; //also useState is required, but thats already imported above
 // for dark mode
+
+const notifyLogin=()=>{
+toast.success("Logged in successfully")
+}
+
 
 const Auth = () => {
     // For Toggle Login And SignUp
@@ -318,6 +323,7 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
     const handleFormSubmission = (e) => {
         e.preventDefault();
         // Navigate to the home page
+        notifyLogin();
         navigate("/home");
     };
 
