@@ -16,3 +16,33 @@
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
 }
+
+.toggle-switch {
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-switch.on {
+    background-color: #1E88E5;
+  }
+  
+  .switch-handle {
+    width: 23px;
+    height: 23px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: left 0.3s;
+  }
+  
+  .toggle-switch.on .switch-handle {
+    left: 26px;
+  }
+  
