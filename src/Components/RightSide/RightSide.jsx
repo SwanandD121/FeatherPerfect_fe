@@ -6,12 +6,14 @@ import TrendCard from '../TrendCard/TrendCard';
 import ShareModal from '../ShareModal/ShareModal';
 import { Link } from 'react-router-dom';
 import './RightSide.css';
-import NotificationModal from '../NotificationModal/NotificationModal'; 
+import NotificationModal from '../NotificationModal/NotificationModal';
+import SettingsModal from '../SettingsModal/SettingsModal'; // Import SettingsModal
 
 const RightSide = () => {
   const [theme, setTheme] = useState(null);
   const [modalOpened, setModalOpened] = useState(false);
   const [notiModalOpened, setNotiModalOpened] = useState(false); 
+  const [settingsModalOpened, setSettingsModalOpened] = useState(false); // State for SettingsModal
 
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -41,7 +43,7 @@ const RightSide = () => {
         </Link>
 
         <img src={Noti} alt="notifications" className='w-8 h-8' onClick={() => setNotiModalOpened(true)} /> 
-        <img src={Setting} alt="settings" className='w-[2.2rem] h-[2.2rem]' />
+        <img src={Setting} alt="settings" className='w-[2.2rem] h-[2.2rem]' onClick={() => setSettingsModalOpened(!settingsModalOpened)} /> {/* Toggle SettingsModal */}
 
         <label className="switch">
           <input type="checkbox" onChange={handleThemeSwitch} />
@@ -60,6 +62,7 @@ const RightSide = () => {
 
       <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} />
       <NotificationModal modalOpened={notiModalOpened} setModalOpened={setNotiModalOpened} /> 
+      <SettingsModal isOpen={settingsModalOpened} onClose={() => setSettingsModalOpened(false)} /> {/* Add SettingsModal */}
     </div>
   );
 };
