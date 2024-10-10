@@ -5,9 +5,11 @@ import ProfileCardP from '../../Components/ProfileCard/ProfileCardP'
 import PostSide from '../../Components/PostSide/PostSide'
 import RightSide from '../../Components/RightSide/RightSide'
 import { Link } from 'react-router-dom'
+import Footer from '../../Components/Footer/Footer'
 
 const Profile = () => {
   return (
+    <>
     <div className="Profile">
         <ProfileLeft/>
 
@@ -17,7 +19,11 @@ const Profile = () => {
         </div>
 
         <RightSide/>
+        
     </div>
+    <Footer/>
+    </>
+    
   )
 }
 
