@@ -54,7 +54,6 @@ const ProfileCardH = () => {
             <hr className='w-4/5 border-2 border-[#cfcdcd] dark:border-slate-700 m-1 rounded-sm '/>
 
         </div>
-        // using the onclick function the page will be opened from top 
         <Link to="/profile" className='self-center m-4'>      
         <button onClick={() => window.scrollTo(0,0) } className=' font-semibold cursor-pointer hover:underline  text-[#3c81e9] self-center'>
           Visit Profile
