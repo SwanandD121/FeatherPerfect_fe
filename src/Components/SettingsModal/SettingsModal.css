@@ -1,0 +1,13 @@
+.form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #222;
+    color: white;
+  }
+  
