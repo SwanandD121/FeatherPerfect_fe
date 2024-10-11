@@ -111,6 +111,7 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
     // this method is to navigate from login to signup
     // a litter bit optimize, it create once reference of a method
     const navigatePage = () => setLogin("Login");
+     const navigate = useNavigate();
 
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -174,6 +175,9 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
         }
         // Proceed with form submission
         console.log("Form submitted successfully");
+        console.log(e.target.value);
+        navigate("/home");
+        toast.success("Sign up Successfully!");
     };
 
     return (
