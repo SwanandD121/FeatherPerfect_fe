@@ -1,14 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import ProfileImg from '../../img/profile-img.jpg';
 import CoverImg from '../../img/cover-img.jpg'; // Import the cover photo
 
 const SettingsModal = ({ isOpen, onClose, username = "ShaazJung", email }) => {
   const modalRef = useRef();
+  const [name, setName] = useState('');
+  const [userName, setUserName] = useState(username);
 
   const handleClickOutside = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       onClose();
     }
+  };
+
+  const handleSave = () => {
+    // You can add save logic here, for example updating the user info
+    alert(`Saved Name: ${name}, Username: ${userName}`);
+    onClose(); // Close the modal after saving
   };
 
   if (!isOpen) return null;
@@ -42,7 +50,7 @@ const SettingsModal = ({ isOpen, onClose, username = "ShaazJung", email }) => {
                 alt="Profile"
                 className="w-32 h-32 rounded-full mb-2 transform transition-transform duration-300 hover:scale-105" // Hover effect added
               />
-              <p className="text-white font-semibold">{username}</p>
+              <p className="text-white font-semibold">{userName}</p>
             </div>
 
             {/* Cover photo with space between profile photo */}
@@ -64,6 +72,47 @@ const SettingsModal = ({ isOpen, onClose, username = "ShaazJung", email }) => {
               className="bg-gray-700 text-white py-2 px-4 rounded hover:shadow-lg transform transition-transform duration-300 hover:scale-105 mr-5"
             >
               Change Cover Photo
+            </button>
+          </div>
+
+          {/* Input fields for Name and Username */}
+          <div className="mt-6">
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-gray-300 font-semibold mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Enter your name"
+                className="w-full p-2 rounded bg-gray-700 text-white border-none focus:outline-none focus:ring-2 focus:ring-gray-500"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="username" className="block text-gray-300 font-semibold mb-1">
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                placeholder="Enter your username"
+                className="w-full p-2 rounded bg-gray-700 text-white border-none focus:outline-none focus:ring-2 focus:ring-gray-500"
+              />
+            </div>
+          </div>
+
+          {/* Save Button */}
+          <div className="mt-6 flex justify-end">
+            <button
+              onClick={handleSave}
+              className="bg-gray-600 text-white py-2 px-6 rounded hover:bg-blue-700 hover:shadow-lg transition-all"
+            >
+              Save
             </button>
           </div>
         </div>
