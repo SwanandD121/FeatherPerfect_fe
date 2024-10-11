@@ -27,7 +27,7 @@ const PostShare = () => {
         <img src={profileimg} alt="" className='rounded-full w-12 h-12 border-2 border-[#1060d7] shadow-md' />
 
         <div className='w-full flex flex-col items-center gap-4'>
-            <input type="text" placeholder="What's Happening..." className='w-full h-10 mt-1 dark:text-white bg-gray-200/50 dark:bg-slate-700 border-2 dark:border-none rounded-lg outline-none p-2' />
+            <input type="text" placeholder="What's Happening..." className='w-full h-10 mt-1 dark:text-white bg-gray-200/50 dark:bg-slate-700 border-[1px] border-slate-800 rounded-lg p-2' />
 
             <div className="postOptions flex w-full justify-between items-center text-sm">
                 <div className="option flex items-center font-semibold text-green-500 hover:cursor-pointer" onClick={()=>imageRef.current.click()}>
