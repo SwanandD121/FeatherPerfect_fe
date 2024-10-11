@@ -1,0 +1,120 @@
+/* ExperienceModal.css */
+
+.fixed {
+    position: fixed;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.z-50 {
+    z-index: 50;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.bg-black {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-gray-800 {
+    background-color: #2d2d2d; /* Darker background for modal */
+}
+
+.bg-gray-700 {
+    background-color: #383838; /* Slightly lighter for input areas */
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.duration-200 {
+    transition-duration: 0.2s;
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-gray-400 {
+    color: #b0b0b0;
+}
+
+.text-gray-500 {
+    color: #a0a0a0;
+}
+
+.border-dashed {
+    border-style: dashed;
+}
+
+.border-gray-500 {
+    border-color: #7e7e7e;
+}
+
+.border-4 {
+    border-width: 4px;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.h-40 {
+    height: 10rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.max-w-lg {
+    max-width: 32rem; /* Set max width for the modal */
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.rounded-lg {
+    border-radius: 0.375rem;
+}
+
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, #2eaafa, #1060d7);
+}
