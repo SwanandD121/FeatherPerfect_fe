@@ -3,6 +3,7 @@ import Logo from "../../img/logo.png";
 import "./Auth.css";
 // import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import PasswordInput from "../PasswordInput";
 import { useNavigate } from "react-router-dom";
 // import eye from "../../img/show-eye.png";
 // import hideEye from "../../img/hide-eye.png";
@@ -236,37 +237,23 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                     </div>
 
                     {/* Password and Confirm Password Row */}
-                    <div className="grid grid-cols-2 gap-4">
-                        <div>
-                            <label
-                                htmlFor="password"
-                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                            >
-                                Password
-                            </label>
-                            <div className="relative flex items-center">
-                                <input
-                                    id="password"
-                                    name="password"
-                                    type={passHidden ? "password" : "text"}
-                                    required
-                                    value={password}
-                                    onChange={handlePasswordChange}
-                                    className="w-full px-3 py-2 mt-1 pr-10 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none transition-all duration-300 hover:border-theme-btn"
-                                    placeholder="Password"
-                                />
-                                <button 
-                                    type="button" 
-                                    onClick={showPassword}
-                                    className="absolute right-3 bg-white dark:bg-gray-700 text-gray-500 hover:text-gray-700 dark:text-gray-200 dark:hover:text-white px-2 py-1 rounded"
-                                >
-                                    {
-                                        passHidden ? <i class="fa-regular fa-eye"></i> : <i class="fa-regular fa-eye-slash"></i>
-                                    }
-                                </button>
-                            </div>
-
-                        </div>
+                   
+                      <div className="grid grid-cols-2 gap-4">
+                        <PasswordInput
+                            id="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            placeholder="Password"
+                        />
+                        <PasswordInput
+                            id="confirm-password"
+                            name="confirmPassword"
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
+                            placeholder="Confirm Password"
+                        />
+                       </div>
                         <div>
                             <label
                                 htmlFor="confirm-password"
