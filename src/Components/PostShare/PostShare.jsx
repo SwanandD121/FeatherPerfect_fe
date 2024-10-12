@@ -31,6 +31,31 @@ const PostShare = () => {
         }
     };
 
+
+  return (
+    <div className="postShare flex justify-between items-cente rounded-3xl p-4 gap-4 bg-white/70 dark:bg-slate-800">
+        <img src={profileimg} alt="" className='rounded-full w-12 h-12 border-2 border-[#1060d7] shadow-md' />
+
+        <div className='w-full flex flex-col items-center gap-4'>
+            <input type="text" placeholder="What's Happening..." className='w-full h-10 mt-1 dark:text-white bg-gray-200/50 dark:bg-slate-700 border-[1px] border-slate-800 rounded-lg p-2' />
+
+            <div className="postOptions flex w-full justify-between items-center text-sm">
+                <div className="option flex items-center font-semibold text-green-500 hover:cursor-pointer" onClick={()=>imageRef.current.click()}>
+                    <UilScenery className=""/>Photo
+                </div>
+
+                <div className="option flex items-center font-semibold text-blue-500 hover:cursor-pointer">
+                    <UilPlayCircle className=""/>Video
+                </div>
+
+                <div className="option flex items-center font-semibold text-red-500 hover:cursor-pointer">
+                    <UilLocationPoint className=""/>Location
+                </div>
+
+                <div className="option flex items-center font-semibold text-yellow-500 hover:cursor-pointer">
+                    <UilSchedule className=""/>Schedule
+                </div>
+
     const getLocation = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
@@ -40,6 +65,7 @@ const PostShare = () => {
             alert("Geolocation is not supported by this browser.");
         }
     };
+
 
     const onShare = () => {
         alert('Content Shared Successfully!');
