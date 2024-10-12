@@ -224,15 +224,15 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                     {/* Username Field */}
                     <div>
                         <label
-                            htmlFor="username"
+                            htmlFor="email"
                             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                         >
-                            Username
+                            Email
                         </label>
                         <input
-                            id="username"
-                            name="username"
-                            type="text"
+                            id="email"
+                            name="email"
+                            type="email"
                             required
                             className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
                             placeholder="Username"
