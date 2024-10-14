@@ -1,4 +1,5 @@
 import "./App.css";
+import VerifyOtp from "./Components/Auth/verifyOtp";
 import Auth from "./pages/Auth/Auth";
 import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
@@ -45,6 +46,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/" element={<Auth />} />
+          <Route path="/verify-otp" element={<VerifyOtp/>} />
         </Routes>
       </div>
     </BrowserRouter>
