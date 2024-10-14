@@ -27,7 +27,7 @@ Whether you're a professional wildlife photographer or a casual nature lover, **
 
 ## ✨ Key Features ✨
 - **📷 Photo Sharing**
-  - Upload and share your wildlife photography with a dedicated community of nature enthusiasts.
+  - Upload and share your wildlife photography with dedicated community of nature enthusiasts.
 
 - **🌍 Curated Feed**
   - Explore a curated feed of breathtaking wildlife images, bringing nature to your screen.
