@@ -418,20 +418,18 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
                     </div>
 
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                            <input
-                                id="remember-me"
-                                name="remember-me"
-                                type="checkbox"
-                                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
-                                checked
-                                readOnly
-                            />
-                            <label htmlFor="remember-me" className="ml-2 text-sm text-gray-600 dark:text-gray-300">
-                                Remember me
-                            </label>
-                        </div>
-                    </div>
+    <div className="flex items-center">
+        <input
+            id="remember-me"
+            name="remember-me"
+            type="checkbox"
+            className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+        />
+        <label htmlFor="remember-me" className="ml-2 text-sm text-gray-600 dark:text-gray-300">
+            Remember me
+        </label>
+    </div>
+</div>
 
                     <button
                         type="submit"
