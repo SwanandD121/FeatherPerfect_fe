@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { signUp, logIn , sendOtp} from "../../api.communicators";
+import {  logIn , sendOtp} from "../../api.communicators";
 import Logo from "../../img/logo.png";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
