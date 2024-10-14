@@ -2,9 +2,18 @@
 import React, { useEffect, useState } from "react";
 import {  logIn , sendOtp} from "../../api.communicators";
 import Logo from "../../img/logo.png";
+
+import "./Auth.css";
+// import { Link } from "react-router-dom";
+
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
+
+const notifyLogin=()=>{
+toast.success("Logged in successfully")
+}
+
 
 const Auth = () => {
   const [login, setLogin] = useState("Login");
@@ -49,6 +58,7 @@ const Auth = () => {
             </h6>
           </div>
         </div>
+
 
         {login === "Login" ? (
           <LogIn
@@ -189,6 +199,7 @@ const SignUp = ({ setLogin, handleThemeSwitch, currentTheme }) => {
                 className="input-field"
                 placeholder="Password"
               />
+
             </div>
             <div>
               <label
@@ -324,6 +335,7 @@ const LogIn = ({ setLogin, handleThemeSwitch, currentTheme }) => {
               Sign Up
             </button>
           </p>
+
         </div>
 
         <button onClick={handleThemeSwitch} className="toggle-theme-btn">
