@@ -3,6 +3,7 @@ import profileimg from '../../img/profile-img.jpg';
 import { UilScenery, UilPlayCircle, UilLocationPoint, UilSchedule, UilTimesSquare } from '@iconscout/react-unicons';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'; // Import the date picker CSS
+import { toast } from "react-toastify";
 
 const PostShare = () => {
     const [image, setImage] = useState(null);
@@ -42,9 +43,35 @@ const PostShare = () => {
     };
 
     const onShare = () => {
-        alert('Content Shared Successfully!');
-        // Perform any additional share logic here
+        // Prepare the data to be shared
+        const shareData = {
+            text: document.querySelector('input[type="text"]').value, // Get the text input value
+            image: image ? image.image : null,
+            video: video ? video.video : null,
+            location,
+            schedule,
+        };
+    
+        
+        if (!shareData.text && !shareData.image && !shareData.video && !shareData.location) {
+            toast.error("Please add some content before sharing."); 
+            return;
+        }
+    
+        // Here we can perform the logic to upload/share the data, e.g., sending to an API
+   
+ 
+    
+        toast.success("Content Shared Successfully!");
+    
+        // Clear the input fields and reset state
+        setImage(null);
+        setVideo(null);
+        setLocation("");
+        setSchedule(null);
+        document.querySelector('input[type="text"]').value = ""; 
     };
+    
 
     return (
         <div className="postShare flex justify-between items-center rounded-3xl p-4 gap-4 bg-white/70 dark:bg-slate-800">
