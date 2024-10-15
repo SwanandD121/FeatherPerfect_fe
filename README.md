@@ -197,17 +197,17 @@ Contributors can earn points based on the complexity of their tasks:
 
 ---
 
-## 👀 Our Contributors
-
-- We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating this project to greater heights.
-- Make sure you show some love by giving ⭐ to our repository.
-
-<div align="center">
-
-  <a href="https://github.com/SwanandD121/FeatherPerfect_fe">
-    <img src="https://contrib.rocks/image?repo=SwanandD121/FeatherPerfect_fe&&max=100" />
-  </a>
+<div>
+  <h2 align = "center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35">Our Contributors</h2>
+  <div align = "center">
+    <h3>Thank you for contributing to our repository</h3>
+      
+  ![Contributors](https://contrib.rocks/image?repo=SwanandD121/FeatherPerfect_fe&v=1)
+  </div>
+   - We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating this project to greater heights.<br>
+   - Make sure you show some love by giving ⭐ to our repository.
 </div>
+
 
 ---
 ## GSSoC Guidelines 
