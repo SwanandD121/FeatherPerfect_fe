@@ -215,6 +215,16 @@ As this project is part of GSSoC, please follow the [GSSoC Guidelines](https://g
 
 ---
 
+<!-- Added: Team Section  -->
+## 👥 Team
+| ![Swanand Deshpande](https://avatars.githubusercontent.com/u/117746995?v=4&s=80) |
+|:--:|
+| **Swanand Deshpande** <br> <sub>Project Admin</sub> | 
+| [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/swananddeshpande121/) [![Gmail](https://img.icons8.com/fluency/32/000000/gmail.png)](mailto:swananddeshpande121@gmail.com)|
+
+For any inquiries or feedback, please contact. Happy Contributing 🫡
+
+
 ## 📄 Ending Note
 Thank you for your interest in **FeatherPerfect**! We value your contributions and are excited to have you as part of our community. Feel free to share your ideas, report bugs, and help us make **FeatherPerfect** even better.
 
