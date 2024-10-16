@@ -231,10 +231,9 @@ As this project is part of GSSoC, please follow the [GSSoC Guidelines](https://g
 
 <!-- Added: Team Section  -->
 ## 👥 Team
-| ![Swanand Deshpande](https://avatars.githubusercontent.com/u/117746995?v=4&s=80) |
-|:--:|
-| **Swanand Deshpande** <br> <sub>Project Admin</sub> | 
-| [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/swananddeshpande121/) [![Gmail](https://img.icons8.com/fluency/32/000000/gmail.png)](mailto:swananddeshpande121@gmail.com)|
+| ![Swanand Deshpande](https://avatars.githubusercontent.com/u/117746995?v=4&s=80) | ![Samyak Maitre](https://avatars.githubusercontent.com/u/130790017?v=4&s=80) |
+|:--:|:--:|
+| **Swanand Deshpande** <br> <sub>Project Admin</sub> <br> [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/swananddeshpande121/) [![Gmail](https://img.icons8.com/fluency/32/000000/gmail.png)](mailto:swananddeshpande121@gmail.com) | **Samyak Maitre** <br> <sub>Maintainer</sub> <br> [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/samyakmaitre/) [![Gmail](https://img.icons8.com/fluency/32/000000/gmail.png)](mailto:samyakmaitre@gmail.com) |
 
 For any inquiries or feedback, please contact. Happy Contributing 🫡
 
