@@ -27,7 +27,7 @@ Whether you're a professional wildlife photographer or a casual nature lover, **
 
 ## ✨ Key Features ✨
 - **📷 Photo Sharing**
-  - Upload and share your wildlife photography with a dedicated community of nature enthusiasts.
+  - Upload and share your wildlife photography with dedicated community of nature enthusiasts.
 
 - **🌍 Curated Feed**
   - Explore a curated feed of breathtaking wildlife images, bringing nature to your screen.
@@ -190,6 +190,19 @@ Contributors can earn points based on the complexity of their tasks:
 
 ---
 
+## 👀 Our Contributors
+
+- We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating this project to greater heights.
+- Make sure you show some love by giving ⭐ to our repository.
+
+<div align="center">
+
+  <a href="https://github.com/SwanandD121/FeatherPerfect_fe">
+    <img src="https://contrib.rocks/image?repo=SwanandD121/FeatherPerfect_fe&&max=100" />
+  </a>
+</div>
+
+---
 ## GSSoC Guidelines 
 As this project is part of GSSoC, please follow the [GSSoC Guidelines](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines) to ensure smooth participation.
 

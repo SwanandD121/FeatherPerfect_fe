@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../img/logo.png";
 import "./Auth.css";
 // import { Link } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 // import eye from "../../img/show-eye.png";
 // import hideEye from "../../img/hide-eye.png";
@@ -10,6 +10,11 @@ import { useNavigate } from "react-router-dom";
 // for dark mode
 import { useEffect, useState } from "react"; //also useState is required, but thats already imported above
 // for dark mode
+
+const notifyLogin=()=>{
+toast.success("Logged in successfully")
+}
+
 
 const Auth = () => {
     // For Toggle Login And SignUp
@@ -107,8 +112,68 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
     // a litter bit optimize, it create once reference of a method
     const navigatePage = () => setLogin("Login");
 
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+
+    const validatePassword = (pass) => {
+        const minLength = 8;
+        const maxLength = 20;
+        const hasUpperCase = /[A-Z]/.test(pass);
+        const hasLowerCase = /[a-z]/.test(pass);
+        const hasNumbers = /\d/.test(pass);
+        const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(pass);
+
+        if (pass.length < minLength || pass.length > maxLength) {
+            return `Password must be between ${minLength} and ${maxLength} characters.`;
+        }
+
+        if (!(hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChar)) {
+            return "Password must include uppercase, lowercase, numbers, and special characters.";
+        }
+
+        // Basic strength check (you can expand this)
+        const commonPatterns = /^(?=.*123)(?=.*password)(?=.*qwerty)/i;
+        if (commonPatterns.test(pass)) {
+            return "Password contains common patterns. Please choose a stronger password.";
+        }
+
+        return '';
+    };
+
+    // Show password logic
+    const [passHidden, setPassHidden] = useState(true);
+    const [confPassHidden, setConfPassHidden] = useState(true);
+
+    const showPassword = () => {
+        setPassHidden(!passHidden);
+    };
+
+    const showConfirmPassword = () => {
+        setConfPassHidden(!confPassHidden);
+    };
+
+    const handlePasswordChange = (e) => {
+        const newPassword = e.target.value;
+        setPassword(newPassword);
+        setPasswordError(validatePassword(newPassword));
+    };
+
+    const handleConfirmPasswordChange = (e) => {
+        setConfirmPassword(e.target.value);
+    };
+
     const handleFormSubmission = (e) => {
         e.preventDefault();
+        if (password !== confirmPassword) {
+            setPasswordError("Passwords do not match.");
+            return;
+        }
+        if (passwordError) {
+            return;
+        }
+        // Proceed with form submission
+        console.log("Form submitted successfully");
     };
 
     return (
@@ -152,21 +217,21 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                         </div>
                     </div>
 
-                    {/* Username Field */}
+                    {/* Email Field */}
                     <div>
                         <label
-                            htmlFor="username"
+                            htmlFor="Email"
                             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                         >
-                            Username
+                            Email
                         </label>
                         <input
-                            id="username"
-                            name="username"
-                            type="text"
+                            id="Email"
+                            name="Email"
+                            type="Email"
                             required
                             className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                            placeholder="Username"
+                            placeholder="Email"
                         />
                     </div>
 
@@ -179,14 +244,28 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                             >
                                 Password
                             </label>
-                            <input
-                                id="password"
-                                name="password"
-                                type="password"
-                                required
-                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                                placeholder="Password"
-                            />
+                            <div className="relative flex items-center">
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type={passHidden ? "password" : "text"}
+                                    required
+                                    value={password}
+                                    onChange={handlePasswordChange}
+                                    className="w-full px-3 py-2 mt-1 pr-10 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none transition-all duration-300 hover:border-theme-btn"
+                                    placeholder="Password"
+                                />
+                                <button 
+                                    type="button" 
+                                    onClick={showPassword}
+                                    className="absolute right-3 bg-white dark:bg-gray-700 text-gray-500 hover:text-gray-700 dark:text-gray-200 dark:hover:text-white px-2 py-1 rounded"
+                                >
+                                    {
+                                        passHidden ? <i class="fa-regular fa-eye"></i> : <i class="fa-regular fa-eye-slash"></i>
+                                    }
+                                </button>
+                            </div>
+
                         </div>
                         <div>
                             <label
@@ -195,16 +274,33 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                             >
                                 Confirm Password
                             </label>
-                            <input
-                                id="confirm-password"
-                                name="confirm-password"
-                                type="password"
-                                required
-                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
-                                placeholder="Confirm Password"
-                            />
+                            <div className="relative flex items-center">
+                                <input
+                                    id="confirm-password"
+                                    name="confirm-password"
+                                    type={confPassHidden ? "password" : "text"}
+                                    required
+                                    value={confirmPassword}
+                                    onChange={handleConfirmPasswordChange}
+                                    className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn"
+                                    placeholder="Confirm Password"
+                                />
+                                <button 
+                                    type="button" 
+                                    onClick={showConfirmPassword}
+                                    className="absolute right-3 bg-white dark:bg-gray-700 text-gray-500 hover:text-gray-700 dark:text-gray-200 dark:hover:text-white px-2 py-1 rounded"
+                                >
+                                    {
+                                        confPassHidden ? <i class="fa-regular fa-eye"></i> : <i class="fa-regular fa-eye-slash"></i>
+                                    }
+                                </button>
+                            </div>
                         </div>
                     </div>
+
+                    {passwordError && (
+                        <p className="text-red-500 text-sm mt-1">{passwordError}</p>
+                    )}
 
                     {/* SignUp Button */}
                     <button
@@ -229,12 +325,12 @@ function SignUp({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) 
                 </div>
 
                 {/* Dark Mode Toggle */}
-                <button
-                    onClick={handleThemeSwitch}
-                    className="w-full text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
-                    {currentTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                </button>
+                <div className="flex flex-row justify-center items-center"> 
+                    <label className="switch"> 
+                        <input type="checkbox" onChange={handleThemeSwitch} /> 
+                            <span className="slider"></span> 
+                    </label>
+                </div>
             </div>
         </div>
     );
@@ -262,7 +358,16 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
     const handleFormSubmission = (e) => {
         e.preventDefault();
         // Navigate to the home page
+        notifyLogin();
         navigate("/home");
+    };
+
+    // Show password logic
+    const [passHidden, setPassHidden] = useState(true);
+    const [confPassHidden, setConfPassHidden] = useState(true);
+
+    const showPassword = () => {
+        setPassHidden(!passHidden);
     };
 
     return (
@@ -291,14 +396,25 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
                         >
                             Password
                         </label>
-                        <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            required
-                            className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn "
-                            placeholder="Enter your password..."
-                        />
+                        <div className="relative flex items-center">
+                            <input
+                                id="password"
+                                name="password"
+                                type={passHidden ? "password" : "text"}
+                                required
+                                className="w-full px-3 py-2 mt-1 text-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:border-ring-blue-600 transition-all duration-300 hover:border-theme-btn "
+                                placeholder="Enter your password..."
+                            />
+                            <button 
+                                type="button" 
+                                onClick={showPassword}
+                                className="absolute right-3 bg-white dark:bg-gray-700 text-gray-500 hover:text-gray-700 dark:text-gray-200 dark:hover:text-white px-2 py-1 rounded"
+                                >
+                                {
+                                    passHidden ? <i class="fa-regular fa-eye"></i> : <i class="fa-regular fa-eye-slash"></i>
+                                }
+                            </button>
+                        </div>
                     </div>
 
                     <div className="flex items-center justify-between">
@@ -339,12 +455,12 @@ function LogIn({ setLogin, handleThemeSwitch = null, currentTheme = "light" }) {
                 </div>
 
                 {/* Dark Mode Toggle */}
-                <button
-                    onClick={handleThemeSwitch}
-                    className="w-full text-sm font-medium text-gray-700 dark:text-gray-300 inline-block"
-                >
-                    {currentTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                </button>
+                <div className="flex flex-row justify-center items-center"> 
+                    <label className="switch"> 
+                        <input type="checkbox" onChange={handleThemeSwitch} /> 
+                            <span className="slider"></span> 
+                    </label>
+                </div>
             </div>
         </div>
     );

@@ -1,3 +1,4 @@
+
 # Contributing to CONTRIBUTING.md
 
 First off, thanks for taking the time to contribute! ❤️
@@ -19,6 +20,8 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 - [Suggesting Enhancements](#suggesting-enhancements)
 - [Your First Code Contribution](#your-first-code-contribution)
 - [How to create an issue](#how-to-create-an-issue)
+- [How to create a PR](#how-to-create-a-pr)
+
 
 
 ## Code of Conduct
@@ -139,7 +142,76 @@ Enhancement suggestions are tracked as [GitHub issues](/issues).
 - *Browser/version*: [if relevant]
 
 ### Additional Context:
-[Any other information you think would be helpful.]
+[Any other information you think would be helpful.]
+
+## How to create a PR:
+Follow these steps to create a pull request:
+
+### 1. Fork the Repository
+   - Go to the repository you want to contribute to.
+   - Click the **Fork** button in the top right corner to create a copy of the repository under your GitHub account.
+
+### 2. Clone the Forked Repository
+   - Copy the repository URL from your forked repository (click the **Code** button and copy the URL).
+   - Open a terminal and run the following command:
+     ```bash
+     git clone https://github.com/<username>/FeatherPerfect_fe.git
+     ```
+   - Replace `<username>` with the your username.
+   - Navigate to the cloned repository:
+     ```bash
+     cd <FeatherPerfect_fe>
+     ```
+
+### 3. Create a New Branch
+   - Create a new branch for your changes:
+     ```bash
+     git checkout -b <branch-name>
+     ```
+   - Replace `<branch-name>` with a descriptive name for your branch.
+
+### 4. Make Your Changes
+   - Open the files you want to edit in a code editor.
+   - Make your changes and save them.
+
+### 5. Commit Your Changes
+   - Stage the changes:
+     ```bash
+     git add .
+     ```
+   - Commit the changes with a meaningful message:
+     ```bash
+     git commit -m "Add a brief description of the changes"
+     ```
+
+### 6. Push the Changes to GitHub
+   - Push your branch to your forked repository:
+     ```bash
+     git push origin <branch-name>
+     ```
+
+### 7. Create a Pull Request
+   - Go to your forked repository on GitHub.
+   - Click the **Compare & pull request** button next to the branch you just pushed.
+   - Fill out the PR template, including a description of your changes.
+   - Click **Create pull request**.
+
+### 8. Review and Address Feedback
+   - Monitor your pull request for any comments or requests for changes.
+   - If requested, make the necessary changes and push them to your branch.
+   - Your PR will update automatically.
+
+### 9. Wait for Approval and Merge
+   - Once your pull request is approved, it will be merged into the main repository.
+
+### 10. Clean Up
+   - After your pull request has been merged, you can delete your branch from both your local and remote repositories.
+     ```bash
+     git branch -d <branch-name>
+     git push origin --delete <branch-name>
+     ```
+
+Congratulations! You’ve successfully created a pull request.
 
 ## To read more about contributing:
 [Here you will learn how to contribute to open source](https://opensource.guide/how-to-contribute/)
