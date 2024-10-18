@@ -1,5 +1,5 @@
 name: PR Issue Checker
-# Created my @smog-root.
+# Created by @smog-root.
 on:
   pull_request:
     types: [opened, edited]
@@ -21,14 +21,14 @@ jobs:
             exit 1
           fi
 
-          if [[ ! "$PR_DESCRIPTION" =~ Fixes\ #[0-9]+ ]]; then
-            echo "The PR description should include 'Fixes #<issue-number>' if not addressing any issue."
-            echo "##[error]Fixes #NEW must be included in the description."
+          if [[ ! "$PR_DESCRIPTION" =~ (Fixes|Closes)\ #[0-9]+ ]]; then
+            echo "The PR description should include 'Fixes #<issue-number>' or 'Closes #<issue-number>' if addressing an issue."
+            echo "##[error]Fixes #<issue-number> or Closes #<issue-number> must be included in the description."
             exit 1
           fi
 
           echo "PR description is valid."
 
-      - name: Output result
+      - name: All checks passed
         run: echo "All checks passed."
         
