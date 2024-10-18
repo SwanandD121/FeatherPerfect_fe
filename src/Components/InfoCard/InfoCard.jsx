@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { UilPen } from '@iconscout/react-unicons'
+// import { UilPen } from '@iconscout/react-unicons'
 import ProfileModal from '../ProfileModal/ProfileModal'
 import { Link } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ const InfoCard = () => {
     <div className="InfoCard flex flex-col bg-white/70 dark:bg-slate-800 rounded-3xl p-4 w-full items-center">
         <div className="InfoHead flex justify-between w-full font-bold">
             <h3 className='text-center w-full mb-3 dark:text-white'>Your Info</h3>
-            <UilPen className="hover:cursor-pointer dark:text-white" onClick={()=>setModalOpened(true)}/>
+            {/* <UilPen className="hover:cursor-pointer dark:text-white" onClick={()=>setModalOpened(true)}/> */}
             
             <ProfileModal modalOpened={modalOpened} setModalOpened={setModalOpened} />
 
