@@ -1,24 +1,27 @@
-import React from 'react'
-import './Profile.css'
-import ProfileLeft from '../../Components/ProfileLeft/ProfileLeft'
-import ProfileCardP from '../../Components/ProfileCard/ProfileCardP'
-import PostSide from '../../Components/PostSide/PostSide'
-import RightSide from '../../Components/RightSide/RightSide'
-import { Link } from 'react-router-dom'
 
+import LeftPanel from "../../Components/Panels/LeftPanel";
+import ProfilePanel from "../../Components/Panels/ProfilePanel";
+import RightPanel from "../../Components/Panels/RightPanel";
+import ShareModal from '../../Components/ShareModal/ShareModal';
+import { useState } from "react";
 const Profile = () => {
-  return (
-    <div className="Profile">
-        <ProfileLeft/>
+    const [modalOpened, setModalOpened] = useState(false);
 
-        <div className="profileCenter flex flex-col gap-4">
-            {/* <ProfileCardP/> */}
-            <PostSide/>
-        </div>
+    return (
+        <>
+            <div className="homepage flex flex-col md:flex-row h-screen overflow-hidden">
+                <LeftPanel />
+                <ProfilePanel/>
+                <RightPanel />
+            </div>
 
-        <RightSide/>
-    </div>
-  )
-}
+            {/* Share Modal */}
+            <ShareModal
+                modalOpened={modalOpened}
+                setModalOpened={setModalOpened}
+            />
+        </>
+    );
+};
 
-export default Profile
+export default Profile;

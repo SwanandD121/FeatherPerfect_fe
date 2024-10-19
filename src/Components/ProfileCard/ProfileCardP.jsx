@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cover from '../../img/cover-img.jpg';
 import Profile from '../../img/profile-img.jpg';
 
 const ProfileCardP = ({ followingCount }) => {
   const ProfilePage = true;
+  
+  // State to manage dropdown visibility
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Function to toggle dropdown
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <div className="ProfileCard rounded-3xl flex flex-col relative overflow-x-clip bg-white/70 dark:bg-slate-800 pb-2">
@@ -21,33 +29,46 @@ const ProfileCardP = ({ followingCount }) => {
         <span className="dark:text-white/80">NatGeo Filmmaker</span>
       </div>
 
+      {/* Dropdown Section */}
       <div className="followStatus flex flex-col items-center justify-center gap-1">
         <hr className="w-4/5 border-2 border-[#cfcdcd] dark:border-slate-700 m-1 rounded-sm" />
 
-        <div className="w-4/5 flex items-center gap-2 justify-around">
-          <div className="follow flex flex-col items-center gap-1">
-            <span className="font-bold dark:text-white">9999</span>
-            <span className="text-gray-500 text-sm dark:text-white/80">Followers</span>
+        {/* Button to toggle dropdown */}
+        <button
+          onClick={toggleDropdown}
+          className="w-4/5 flex items-center justify-between px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+        >
+          <span>Followers & Following</span>
+          <span>{isDropdownOpen ? '▲' : '▼'}</span>
+        </button>
+
+        {/* Conditional Rendering of Follower/Following counts */}
+        {isDropdownOpen && (
+          <div className="w-4/5 flex items-center gap-2 justify-around mt-2">
+            <div className="follow flex flex-col items-center gap-1">
+              <span className="font-bold dark:text-white">9999</span>
+              <span className="text-gray-500 text-sm dark:text-white/80">Followers</span>
+            </div>
+
+            <div className="vl h-20 border-l-4 border-[#cfcdcd] dark:border-slate-700 m-1 rounded-sm"></div>
+
+            <div className="follow flex flex-col items-center gap-1">
+              <span className="font-bold dark:text-white">{followingCount}</span> 
+              <span className="text-gray-500 text-sm dark:text-white/80">Following</span>
+            </div>
+
+            {ProfilePage && (
+              <>
+                <div className="vl h-20 border-l-4 border-[#cfcdcd] dark:border-slate-700 m-1 rounded-sm"></div>
+
+                <div className="follow flex flex-col items-center gap-1">
+                  <span className="font-bold dark:text-white">80</span>
+                  <span className="text-gray-500 text-sm dark:text-white/80">Posts</span>
+                </div>
+              </>
+            )}
           </div>
-
-          <div className="vl h-20 border-l-4 border-[#cfcdcd] dark:border-slate-700 m-1 rounded-sm"></div>
-
-          <div className="follow flex flex-col items-center gap-1">
-            <span className="font-bold dark:text-white">{followingCount}</span> 
-            <span className="text-gray-500 text-sm dark:text-white/80">Following</span>
-          </div>
-
-          {ProfilePage && (
-            <>
-              <div className="vl h-20 border-l-4 border-[#cfcdcd] dark:border-slate-700 m-1 rounded-sm"></div>
-
-              <div className="follow flex flex-col items-center gap-1">
-                <span className="font-bold dark:text-white">80</span>
-                <span className="text-gray-500 text-sm dark:text-white/80">Posts</span>
-              </div>
-            </>
-          )}
-        </div>
+        )}
 
         <hr className="w-4/5 border-2 border-[#cfcdcd] dark:border-slate-700 m-1 rounded-sm" />
       </div>
