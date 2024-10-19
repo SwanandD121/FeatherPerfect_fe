@@ -86,7 +86,7 @@ const LeftPanel = ({ follow }) => {
           <h1 className="font-semibold">Notification</h1>
         </Link>
         {follow && (
-          <div className="my-6">
+          <div className="my-2">
             <FollowersCard onFollow={handleFollow} />
           </div>
         )}
@@ -100,7 +100,7 @@ const LeftPanel = ({ follow }) => {
         <h1 className="font-semibold">Setting</h1>
       </Link>
 
-      <div className="w-full flex items-center justify-between dark:text-white p-2 rounded-lg mt-4 bg-white/70 dark:bg-slate-800">
+      <div className="w-full flex items-center justify-between dark:text-white p-2 rounded-lg mt-2 bg-white/70 dark:bg-slate-800">
         <div className="flex items-center space-x-2">
           <img
             src={Profile} // Replace with the user's profile image
