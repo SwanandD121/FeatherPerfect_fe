@@ -4,7 +4,7 @@ import { UilSearch } from '@iconscout/react-unicons';
 
 const LogoSearch = () => {
   return (
-    <div className='logoSearch flex gap-3 items-center overflow-hidden w-full'>
+    <div className='logoSearch flex gap-3 items-center overflow-hidden w-full mt-3'>
       <div className="Search flex bg-gray-100 dark:bg-slate-800 rounded-lg p-1 w-full relative">
         <input 
           type="text" 

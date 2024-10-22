@@ -6,7 +6,7 @@ const ProfileCardP = ({ followingCount }) => {
   const ProfilePage = true;
 
   return (
-    <div className="ProfileCard rounded-3xl flex flex-col relative overflow-x-clip bg-white/70 dark:bg-slate-800 pb-2">
+    <div className="ProfileCard rounded-3xl flex flex-col relative overflow-x-clip bg-white/70 dark:bg-slate-800 pb-2 ">
       <div className="ProfileImages flex flex-col relative justify-center items-center ">
         <img src={Cover} alt="" className="w-full" />
         <img

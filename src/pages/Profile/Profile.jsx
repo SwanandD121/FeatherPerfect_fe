@@ -1,24 +1,26 @@
-import React from 'react'
-import './Profile.css'
-import ProfileLeft from '../../Components/ProfileLeft/ProfileLeft'
-import ProfileCardP from '../../Components/ProfileCard/ProfileCardP'
-import PostSide from '../../Components/PostSide/PostSide'
-import RightSide from '../../Components/RightSide/RightSide'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./Profile.css";
+import ProfileLeft from "../../Components/ProfileLeft/ProfileLeft";
+import ProfileCardP from "../../Components/ProfileCard/ProfileCardP";
+import PostSide from "../../Components/PostSide/PostSide";
+import RightSide from "../../Components/RightSide/RightSide";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   return (
     <div className="Profile">
-        <ProfileLeft/>
+      <ProfileLeft />
 
-        <div className="profileCenter flex flex-col gap-4">
-            {/* <ProfileCardP/> */}
-            <PostSide/>
-        </div>
+      <div className="profileCenter flex flex-col gap-4">
+        {/* <ProfileCardP/> */}
+        <PostSide />
+      </div>
 
-        <RightSide/>
+      <div className="w-[95%]" >
+        <RightSide />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
