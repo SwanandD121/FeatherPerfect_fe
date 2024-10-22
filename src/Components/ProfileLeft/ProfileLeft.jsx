@@ -22,7 +22,7 @@ const ProfileLeft = () => {
   };
 
   return (
-    <div className="profileLeft flex flex-col gap-4 items-center">
+    <div className="profileLeft flex flex-col gap-4 items-center p-4">
       <LogoSearch />
       <InfoCard />
       <ProfileCardP followingCount={followingCount} /> {/* Pass followingCount as prop */}
