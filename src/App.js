@@ -10,11 +10,10 @@ import Profile from "./pages/Profile/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 function App() {
   return (
     <BrowserRouter>
-      <div className="App overflow-hidden relative text-gray-800 bg-gray-200 dark:bg-black/90 p-4">
+      <div className="App overflow-hidden relative text-gray-800 bg-gray-200 dark:bg-black/90">
         <div
           className="blur-3xl absolute bg-blue-200 dark:bg-blue-800/30 w-80 h-56 rounded-full"
           style={{ top: "-18%", right: "1rem" }}

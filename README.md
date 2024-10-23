@@ -1,8 +1,16 @@
 # 📸 FeatherPerfect - Social Media for Wildlife Enthusiasts 🦅
 
-![FeatherPerfect Screenshot](/Untitled%20design.png)
+<!-- Added Hacktoberfest 2024 and GSSoC Extended 2024 banners -->
+### This project is now OFFICIALLY accepted for
 
----
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" width="80%">
+  <img src="https://cdn.discordapp.com/attachments/657543125190967316/1294560786114674748/Screenshot_2024-10-12_122347.png?ex=670b752f&is=670a23af&hm=26ddd7f41740b8b19ee4985e7568b3892091384b3b85e7165770a4b10f4d1050&" alt="Hacktoberfest 2024" width="80%">
+</div>
+<br>
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🌟 Table of Contents
 - [Overview](#-overview-)
@@ -15,7 +23,8 @@
 - [Ending Note](#-ending-note-)
 - [Join Us!](#-join-us-)
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🌟 Overview 🌟
 **FeatherPerfect** is a social media platform built using **ReactJS**, offering wildlife photographers and nature enthusiasts a dedicated space to showcase their work. The application allows users to share their wildlife photos, follow other users, and enjoy a curated feed full of beautiful nature-based content.
@@ -23,7 +32,8 @@
 Whether you're a professional wildlife photographer or a casual nature lover, **FeatherPerfect** is the place to connect, share, and get inspired by the beauty of nature.
 ![Interface](/Interface.png)
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## ✨ Key Features ✨
 - **📷 Photo Sharing**
@@ -38,7 +48,8 @@ Whether you're a professional wildlife photographer or a casual nature lover, **
 - **📱 Responsive Design**
   - Optimized for viewing on all devices, ensuring smooth navigation whether you're on mobile, tablet, or desktop.
 
---- 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## ⚙️ Technologies Used ⚙️
 1. **🟦 ReactJS**
@@ -50,13 +61,15 @@ Whether you're a professional wildlife photographer or a casual nature lover, **
 3. **🎨 Tailwind CSS**
    - Ensures a clean, responsive, and aesthetically pleasing design.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🚀 Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), a popular toolchain for building scalable React applications with zero configuration. Below are the steps and scripts you'll need to get started.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ### Prerequisites
 
@@ -65,7 +78,8 @@ Before running the project, ensure you have the following installed on your mach
 - **Node.js** (version 14.x or later) - [Download Node.js](https://nodejs.org/)
 - **npm** (comes bundled with Node.js) or **Yarn** as the package manager.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ### Installation
 
@@ -130,7 +144,8 @@ npm run eject
 ```
 Note: You don’t need to eject if you’re satisfied with the existing setup. Most applications are perfectly served by the built-in configuration provided by Create React App.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🚀 How to Contribute to This Project
 
@@ -180,7 +195,8 @@ We’d love to have you contribute to **FeatherPerfect**! Follow these steps to 
 9. **🔎 Review Process**  
    - The maintainers will review your PR and merge it if everything looks good.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🏆 Contribution Points
 Contributors can earn points based on the complexity of their tasks:
@@ -188,30 +204,48 @@ Contributors can earn points based on the complexity of their tasks:
 - **🥈 Level 2**: 25 Points  
 - **🥉 Level 3**: 45 Points  
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 👀 Our Contributors
-
-- We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating this project to greater heights.
-- Make sure you show some love by giving ⭐ to our repository.
-
-<div align="center">
-
-  <a href="https://github.com/SwanandD121/FeatherPerfect_fe">
-    <img src="https://contrib.rocks/image?repo=SwanandD121/FeatherPerfect_fe&&max=100" />
-  </a>
+<!-- Updated Contributors Mention Section -->
+<div>
+  <h2 align = "center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35">Our Contributors</h2>
+  <div align = "center">
+    <h3>Thank you for contributing to our repository</h3>
+      
+  ![Contributors](https://contrib.rocks/image?repo=SwanandD121/FeatherPerfect_fe&v=1)
+  </div>
+   - We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating this project to greater heights.<br>
+   - Make sure you show some love by giving ⭐ to our repository.
 </div>
+<br>
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
 ## GSSoC Guidelines 
 As this project is part of GSSoC, please follow the [GSSoC Guidelines](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines) to ensure smooth participation.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+<!-- Added: Team Section  -->
+## 👥 Team
+| ![Swanand Deshpande](https://avatars.githubusercontent.com/u/117746995?v=4&s=80) | ![Samyak Maitre](https://avatars.githubusercontent.com/u/130790017?v=4&s=80) |
+|:--:|:--:|
+| **Swanand Deshpande** <br> <sub>Project Admin</sub> <br> [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/swananddeshpande121/) [![Gmail](https://img.icons8.com/fluency/32/000000/gmail.png)](mailto:swananddeshpande121@gmail.com) [![GitHub](https://img.icons8.com/?size=33&id=63777&format=png&color=000000)](https://github.com/swanandd121) | **Samyak Maitre** <br> <sub>Maintainer</sub> <br> [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/samyakmaitre/) [![Gmail](https://img.icons8.com/fluency/32/000000/gmail.png)](mailto:samyakmaitre@gmail.com) [![GitHub](https://img.icons8.com/?size=33&id=63777&format=png&color=000000)](https://github.com/samyakmaitre) |
+
+
+For any inquiries or feedback, please contact. Happy Contributing 🫡
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 📄 Ending Note
 Thank you for your interest in **FeatherPerfect**! We value your contributions and are excited to have you as part of our community. Feel free to share your ideas, report bugs, and help us make **FeatherPerfect** even better.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🙌🏻 Join Us!
 Join the wildlife photography community on **FeatherPerfect** and contribute to an ever-growing platform for nature lovers!
