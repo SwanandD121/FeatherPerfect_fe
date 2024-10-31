@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Profile = () => {
   return (
-    <div className=" grid grid-cols-[28rem_auto_28rem] gap-4 relative border-red-800 border-8">
+    <div className=" grid grid-cols-[28rem_auto_28rem] gap-4 relative">
       <ProfileLeft />
       <div className="profileCenter flex flex-col gap-4">
         {/* <ProfileCardP/> */}
