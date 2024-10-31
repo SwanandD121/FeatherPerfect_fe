@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "../../img/logo.png";
-import "./Auth.css";
 // import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
