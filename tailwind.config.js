@@ -18,6 +18,9 @@ module.exports = {
             },
         },
     },
+     variants: {
+        backgroundClip: ['responsive', 'hover', 'focus'],
+      },
     plugins: [],
     darkMode: "selector",
 };
